@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>
+			These Images Are Makin' Me Surly!
+		</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/yadayada.css">
+		<script>
+			var link = document.createElement("link");
+			link.rel = "stylesheet";
+			link.type = "text/css";
+			link.href = window.location.search.match( /print-pdf/gi ) ? "css/print/pdf.css" : "css/print/paper.css";
+			document.getElementsByTagName("head")[0].appendChild(link);
+		</script>
+	</head>
+	<body class="these-images-are-making-me-surly">
+		<div class="reveal">
+			<!-- Table of Contents
+				[0.0] Title Card
+				[1.0] Image Quality is Subjective
+					[1.1] The Truth
+			-->
+			<div class="slides">
+				<!-- [0.0] Title Card -->
+				<section>
+					<img src="img/title-card.svg" alt="These Images Are Making Me Surly!" title="These Images Are Making Me Surly!" class="title-card">
+					<h5>twitter: <a href="https://twitter.com/malchata" target="_blank" rel="noopener">@malchata</a>&nbsp;&nbsp;|&nbsp;&nbsp;Blog: <a href="https://jeremywagner.me" target="_blank" rel="noopener">jeremywagner.me</a></h5>
+				</section>
+				<!-- [1.0] Image Quality is Subjective -->
+				<section>
+					<!-- [1.1] The Truth -->
+					<section>
+						<div class="heading-image-container">
+							<img src="/img/jerry.svg" class="title-card" alt="The Truth or: Image Quality is Subjective" title="The Truth or: Image Quality is Subjective">
+						</div>
+					</section>
+				</section>
+			</div>
+		</div>
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+		<script>
+			Reveal.initialize({
+				history: true,
+				controls: false,
+				transition: "fade",
+				progress: false,
+				help: false,
+				dependencies: [
+					{
+						src: "plugin/markdown/marked.js"
+					},
+					{
+						src: "plugin/markdown/markdown.js"
+					},
+					{
+						src: "plugin/notes/notes.js",
+						async: true
+					},
+					{
+						src: "plugin/highlight/highlight.js",
+						async: true,
+						callback: function(){
+							hljs.initHighlightingOnLoad();
+						}
+					}
+				]
+			});
+		</script>
+	</body>
+</html>
