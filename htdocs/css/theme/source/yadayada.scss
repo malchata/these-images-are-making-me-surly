@@ -92,6 +92,14 @@ $heading6Size: .6em;
 			font-size: $heading6Size;
 		}
 
+		p{
+			font-family: $mainFont;
+			text-transform: uppercase;
+			font-weight: 800;
+			font-size: .875em;
+			line-height: 1.2;
+		}
+
 		img{
 			border: 0;
 			background: transparent;
