@@ -20,6 +20,7 @@
 			<!-- Table of Contents
 				[0.0] Title Card
 				[1.0] Image Quality is Subjective
+				[2.0] Starting Off Right
 			-->
 			<div class="slides">
 				<!-- [0.0] Title Card -->
@@ -31,9 +32,7 @@
 				<section>
 					<!-- [1.1] The Truth -->
 					<section>
-						<div class="heading-image-container">
-							<img src="/img/jerry.svg" class="title-card" alt="The Truth or: Image Quality is Subjective" title="The Truth or: Image Quality is Subjective">
-						</div>
+						<img src="/img/jerry.svg" class="title-card" alt="The Truth or: Image Quality is Subjective" title="The Truth or: Image Quality is Subjective">
 					</section>
 					<!-- [1.2] The Web is Image Hell -->
 					<section>
@@ -58,14 +57,14 @@
 						<h4>the power of the reference image:</h4>
 						<div class="flex-image-container">
 							<div>
-								<img data-fragment-index="1" src="/img/junior-mints-png8-192-color.png" alt="They're very refreshing!" title="They're very refreshing!" class="fragment">
+								<img data-fragment-index="1" src="/img/junior-mints-png8-192-color.png" alt="They're very refreshing!" title="They're very refreshing!" class="fragment big">
 								<p data-fragment-index="3" class="fragment">
 									8-bit PNG (192 Colors)<br>
 									27.54 KB<br>
 								</p>
 							</div>
 							<div>
-								<img data-fragment-index="2" src="/img/junior-mints-png24.png" alt="They're very refreshing!" title="They're very refreshing!" class="fragment">
+								<img data-fragment-index="2" src="/img/junior-mints-png24.png" alt="They're very refreshing!" title="They're very refreshing!" class="fragment big">
 								<p data-fragment-index="4" class="fragment">
 									Full Color PNG<br>
 									90.72 KB<br>
@@ -75,9 +74,88 @@
 					</section>
 					<!-- [1.6] Who's Got Reference? -->
 					<section>
-						<h2>Designers</h2>
+						<h2>Designers and Developers</h2>
 						<h4>Have references for image quality</h4>
 						<h1 class="fragment">Users don't!</h1>
+					</section>
+					<!-- [1.7] A JPEG Test Case -->
+					<section>
+						<h2>Belaboring the point</h2>
+						<h4>(But this time with JPEGs!)</h4>
+						<div class="flex-image-container">
+							<div>
+								<img data-fragment-index="1" src="/img/cafe-quality-40.jpg" alt="I'll have a big salad." title="I'll have a big salad." class="fragment big">
+								<p data-fragment-index="3" class="fragment">
+									Quality Level 40<br>
+									25.39 KB<br>
+								</p>
+							</div>
+							<div>
+								<img data-fragment-index="2" src="/img/cafe-quality-100.jpg" alt="We don't have a big salad." title="We don't have a big salad." class="fragment big">
+								<p data-fragment-index="4" class="fragment">
+									Quality Level 100<br>
+									129.66 KB<br>
+								</p>
+							</div>
+						</div>
+					</section>
+					<!-- [1.8] Factors in Subjectivity -->
+					<section>
+						<h2>Factors for subjectivity</h2>
+						<p class="fragment">Viewing distance</p>
+						<p class="fragment">Screen size</p>
+						<p class="fragment">Screen resolution and pixel density</p>
+						<p class="fragment">Physical limitations</p>
+					</section>
+				</section>
+				<!-- [2.0] Starting Off Right -->
+				<section>
+					<!-- [2.1] The Foundation -->
+					<section>
+						<img src="/img/kramer.svg" class="title-card" alt="The Truth or: Image Quality is Subjective" title="The Truth or: Image Quality is Subjective">
+					</section>
+					<!-- [2.2] Use The Right Format! -->
+					<section>
+						<h3>Step one:</h3>
+						<h1>Use the right format!</h1>
+					</section>
+					<!-- [2.3] A Case Study in Improper Formats -->
+					<section>
+						<h4>The wrong format can cost you:</h4>
+						<div class="flex-image-container">
+							<div>
+								<img src="/img/cafe-quality-40.jpg" alt="Bawdy George" title="Bawdy George" class="big">
+								<p class="fragment">
+									JPEG (Quality Level 40)<br>
+									25.39 KB<br>
+								</p>
+							</div>
+							<div>
+								<img src="/img/cafe-png24.png" alt="Liar George" title="Liar George" class="big">
+								<p class="fragment">
+									Full Color PNG<br>
+									206.98 KB<br>
+								</p>
+							</div>
+						</div>
+					</section>
+					<!-- [2.4] A Simple Flow Chart -->
+					<section>
+						<h4>One way to choose an image format:</h4>
+						<img src="/img/flowchart.svg" alt="Image Format Choice Flowchart" title="Image Format Choice Flowchart">
+					</section>
+					<!-- [2.5] For Lossy Images -->
+					<section>
+						<h3>Step two:</h3>
+						<h4>For lossy images...</h4>
+						<h1 class="fragment">Reign in quality!</h1>
+					</section>
+					<!-- [2.6] The Golden Rule for Lossy Images -->
+					<section>
+						<h2>The</h2>
+						<h1>S**t + 10</h1>
+						<h2>Rule</h2>
+						<h4>(It's gold!)</h4>
 					</section>
 				</section>
 			</div>
@@ -92,12 +170,6 @@
 				progress: false,
 				help: false,
 				dependencies: [
-					{
-						src: "plugin/markdown/marked.js"
-					},
-					{
-						src: "plugin/markdown/markdown.js"
-					},
 					{
 						src: "plugin/notes/notes.js",
 						async: true
