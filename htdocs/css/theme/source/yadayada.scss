@@ -107,6 +107,10 @@ $heading6Size: .6em;
 			box-shadow: none;
 		}
 
+		pre{
+			background: rgba(0, 0, 0, .5);
+		}
+
 		.smaller{
 			max-width: 55%;
 		}
@@ -132,6 +136,10 @@ $heading6Size: .6em;
 
 		.no-shadow{
 			box-shadow: none;
+		}
+
+		.yellow{
+			color: $yellow;
 		}
 
 		.centered{
