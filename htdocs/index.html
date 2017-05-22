@@ -19,8 +19,11 @@
 		<div class="reveal">
 			<!-- Table of Contents
 				[0.0] Title Card
-				[1.0] Image Quality is Subjective
-				[2.0] Starting Off Right
+				[1.0] The Truth or: Image Quality is Subjective
+				[2.0] The Foundation or: Starting Off Right
+				[3.0] The Fix-up or: Keeping it Lean with Optimizers
+				[4.0] The Yada Yada or: The Miscellany
+				[5.0] The End
 			-->
 			<div class="slides">
 				<!-- [0.0] Title Card -->
@@ -28,9 +31,9 @@
 					<img src="img/title-card.svg" alt="These Images Are Making Me Surly!" title="These Images Are Making Me Surly!" class="title-card">
 					<h5>twitter: <a href="https://twitter.com/malchata" target="_blank" rel="noopener">@malchata</a>&nbsp;&nbsp;|&nbsp;&nbsp;Blog: <a href="https://jeremywagner.me" target="_blank" rel="noopener">jeremywagner.me</a></h5>
 				</section>
-				<!-- [1.0] Image Quality is Subjective -->
+				<!-- [1.0] The Truth or: Image Quality is Subjective -->
 				<section>
-					<!-- [1.1] The Truth -->
+					<!-- [1.1] Title Card -->
 					<section>
 						<img src="/img/jerry.svg" class="title-card" alt="The Truth or: Image Quality is Subjective" title="The Truth or: Image Quality is Subjective">
 					</section>
@@ -109,18 +112,18 @@
 						<p class="fragment">Physical limitations</p>
 					</section>
 				</section>
-				<!-- [2.0] Starting Off Right -->
+				<!-- [2.0] The Foundation or: Starting Off Right -->
 				<section>
-					<!-- [2.1] The Foundation -->
+					<!-- [2.1] Title Card -->
 					<section>
-						<img src="/img/kramer.svg" class="title-card" alt="The Truth or: Image Quality is Subjective" title="The Truth or: Image Quality is Subjective">
+						<img src="/img/kramer.svg" class="title-card" alt="The Foundation or: Starting Off Right" title="The Foundation or: Starting Off Right">
 					</section>
 					<!-- [2.2] Use The Right Format! -->
 					<section>
 						<h3>Step one:</h3>
 						<h1>Use the right format!</h1>
 					</section>
-					<!-- [2.3] A Case Study in Improper Formats -->
+					<!-- [2.3] A Case Study in Improper Format Choices -->
 					<section>
 						<h4>The wrong format can cost you:</h4>
 						<div class="flex-image-container">
@@ -165,18 +168,49 @@
 						<p data-fragment-index="4" class="fragment">4. Get on with your life</p>
 						<h6 data-fragment-index="3" class="fragment">*Your experience may vary</h6>
 					</section>
-					<!-- [2.8] Simplify Vector Artwork -->
+					<!-- [2.8] For Lossless Images -->
 					<section>
 						<h3>Step three:</h3>
+						<h4>For lossless images...</h4>
+						<h1 class="fragment">Quantize!</h1>
+					</section>
+					<!-- [2.9] Quantization in Theory -->
+					<section>
+						<h2>Quantization in Theory</h2>
+						<img src="/img/quantize-theory.png" alt="Quantization in Theory" title="Quantization in Theory">
+					</section>
+					<!-- [2.10] Quantization in Practice -->
+					<section>
+						<h4>Quantization in Practice</h4>
+						<div class="flex-image-container">
+							<div>
+								<img src="/img/jiffy-park-png-128.png" alt="Jiffy Park" title="Jiffy Park" class="big">
+								<p class="fragment">
+									8-bit PNG (128 colors)<br>
+									25.93 KB<br>
+								</p>
+							</div>
+							<div>
+								<img src="/img/jiffy-park-png24.png" alt="Jiffy Park" title="Jiffy Park" class="big">
+								<p class="fragment">
+									Full Color PNG<br>
+									81.7 KB<br>
+								</p>
+							</div>
+						</div>
+					</section>
+					<!-- [2.11] Simplify Vector Artwork -->
+					<section>
+						<h3>Step four:</h3>
 						<h1>Simplify vector artwork!</h1>
 					</section>
-					<!-- [2.9] Simplifying in Illustrator -->
+					<!-- [2.12] Simplifying in Illustrator -->
 					<section>
 						<video autoplay loop muted preload>
 							<source src="/video/simplify.webm" type="video/webm">
 						</video>
 					</section>
-					<!-- [2.10] Simplification Output -->
+					<!-- [2.13] Simplification Output -->
 					<section>
 						<h2>Simplifying works!</h2>
 						<div class="fragment">
@@ -189,19 +223,68 @@
 						</div>
 						<h4 class="fragment"><u>~40%</u> decrease in code</h4>
 					</section>
-					<!-- [2.11] Compress SVGs on The Server -->
+					<!-- [2.14] Compress SVGs on The Server -->
 					<section>
-						<h3>Step three:</h3>
+						<h3>Step five:</h3>
 						<h2>gzip your</h2>
 						<h1>SVGs</h1>
 						<h4 class="fragment">(And brotli if you can!)</h4>
 					</section>
-					<!-- [2.12] SVG Compression Works -->
+					<!-- [2.15] SVG Compression Works -->
 					<section>
 						<h2>SVG Compression Works</h2>
 						<img src="/img/compression-ratios.svg" alt="SVG Compression Ratios" title="SVG Compression Ratios">
 					</section>
+					<!-- [2.16] Mind Your Sizes -->
+					<section>
+						<h3>Step six:</h3>
+						<h1>Mind your</h1>
+						<h1>image sizes!</h1>
+					</section>
+					<!-- [2.17] Oversized Images are a Huge Problem -->
+					<section>
+						<h3>Got oversized images?</h3>
+						<img class="big" src="/img/oversized-image.jpg" alt="Big images, big problems" title="Big images, big problems">
+						<h3>You've got big problems!</h3>
+					</section>
+					<!-- [2.18] Don't Force Giant Images on All Users -->
+					<section>
+						<h1>Respect users!</h1>
+						<h3>Don't make everyone download giant images!</h3>
+					</section>
+					<!-- [2.19] srcset and/or sizes -->
+					<section>
+						<h2>Use <code>srcset</code>:</h2>
+						<pre><code class="html">&lt;img src=&quot;small.jpg&quot;
+     srcset=&quot;small.jpg 384w,
+             medium.jpg 768w,
+             large.jpg 1152w&quot;
+     alt=&quot;Descriptive alt text!&quot;&gt;</code></pre>
+			 			<h4>In <code>&lt;picture&gt;</code> flavor:</h4>
+						<pre><code class="html">&lt;picture&gt;
+    &lt;source srcset=&quot;small.webp 384w,
+                    medium.webp 768w,
+                    large.webp 1152&quot;
+            type=&quot;image/webp&quot;&gt;
+    &lt;source srcset=&quot;small.jpg 384w,
+                    medium.jpg 768w,
+                    large.jpg 1152&quot;
+            type=&quot;image/jpeg&quot;&gt;
+    &lt;img src=&quot;small.jpg&quot; alt=&quot;Descriptive alt text!&quot;&gt;
+&lt;/picture&gt;</code></pre>
+					</section>
 				</section>
+				<!-- [3.0] The Fix-up or: Keeping it Lean with Optimizers -->
+				<section>
+				</section>
+				<!-- [4.0] The Yada Yada or: The Miscellany -->
+				<section>
+					<!-- [4.1] Title Card -->
+					<section>
+						<img src="/img/newman.svg" class="title-card" alt="The Yada Yada or: The Miscellany" title="The Yada Yada or: The Miscellany">
+					</section>
+				</section>
+				<!-- [5.0] The End -->
 			</div>
 		</div>
 		<script src="lib/js/head.min.js"></script>

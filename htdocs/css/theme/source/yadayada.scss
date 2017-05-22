@@ -24,6 +24,7 @@ $mainColor: #d3d0cb;
 $headingColor: #fdfffc;
 $mainFontSize: 42px;
 $mainFont: "Khula", sans-serif;
+$monospaceFont: "Operator Mono", monospace;
 $headingFont: "Khula", sans-serif;
 $headingTextShadow: none;
 $headingLetterSpacing: normal;
@@ -110,6 +111,11 @@ $heading6Size: .6em;
 		pre{
 			background: rgba(0, 0, 0, .5);
 		}
+
+        pre,
+        code{
+            font-family: $monospaceFont;
+        }
 
 		.smaller{
 			max-width: 55%;
