@@ -62,7 +62,7 @@
 							<div>
 								<img data-fragment-index="1" src="/img/junior-mints-png8-192-color.png" alt="They're very refreshing!" title="They're very refreshing!" class="fragment big">
 								<p data-fragment-index="3" class="fragment">
-									8-bit PNG (192 Colors)<br>
+									8-bit PNG (192 colors)<br>
 									27.54 KB<br>
 								</p>
 							</div>
@@ -130,7 +130,7 @@
 							<div>
 								<img src="/img/cafe-quality-40.jpg" alt="Bawdy George" title="Bawdy George" class="big">
 								<p class="fragment">
-									JPEG (Quality Level 40)<br>
+									JPEG (Quality 40)<br>
 									25.39 KB<br>
 								</p>
 							</div>
@@ -276,12 +276,129 @@
 				</section>
 				<!-- [3.0] The Fix-up or: Keeping it Lean with Optimizers -->
 				<section>
+					<!-- [3.1] Title Card -->
+					<section>
+						<h3>[INSERT TITLE CARD IMAGE]</h3>
+					</section>
+					<!-- [3.2] The Easy Way -->
+					<section>
+						<h1>JPEG Optimizers</h1>
+						<h4 class="fragment">(There's a lot of them)</h4>
+					</section>
+					<!-- [3.3] A Comparison -->
+					<section>
+						<h3>JPEG Optimizer Shootout*</h3>
+						<table>
+							<thead>
+								<tr>
+									<td>Optimizer</td>
+									<td>Time</td>
+									<td>Size (KB)</td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>(Source image)</td>
+									<td>n/a</td>
+									<td>1,998.50</td>
+								</tr>
+								<tr>
+									<td>guetzli<span class="yellow">**</span></td>
+									<td><span class="red">6m 32.62s</span></td>
+									<td>776.49</td>
+								</tr>
+								<tr>
+									<td>jpeg-recompress</td>
+									<td>0m 12.74s</td>
+									<td><span class="yellow">742.85</span></td>
+								</tr>
+								<tr>
+									<td>jpegoptim</td>
+									<td>0m&nbsp;&nbsp;0.37s</td>
+									<td>908.50</td>
+								</tr>
+								<tr>
+									<td>mozjpeg (3.2)</td>
+									<td>0m&nbsp;&nbsp;0.37s</td>
+									<td>908.44</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="fragment">
+							<h6>* Target/export quality is 84 due to Guetzli limitations</h6>
+							<h6>** Can only encode baseline JPEGs</h6>
+						</div>
+					</section>
 				</section>
 				<!-- [4.0] The Yada Yada or: The Miscellany -->
 				<section>
 					<!-- [4.1] Title Card -->
 					<section>
 						<img src="/img/newman.svg" class="title-card" alt="The Yada Yada or: The Miscellany" title="The Yada Yada or: The Miscellany">
+					</section>
+					<!-- [4.2] WebP is for Performance -->
+					<section>
+						<h1>WebP</h1>
+						<h3>is for performance!</h3>
+					</section>
+					<!-- [4.3] WebP Advantages -->
+					<section>
+						<h2>Advantages of WebP</h2>
+						<p class="fragment">Offers lower file sizes at reasonable quality</p>
+						<p class="fragment">Available with both lossless and lossy compression modes</p>
+						<p class="fragment">Capable of full transparency (even with lossy compression)</p>
+						<p class="fragment">Widely supported (Blink-based browsers)</p>
+						<p class="fragment">Can be animated!</p>
+					</section>
+					<!-- [4.4] WebP Disadvantages -->
+					<section>
+						<h2>Disavantages of WebP</h2>
+						<p class="fragment">Not supported in all browsers</p>
+						<p class="fragment">Extra effort to maintain WebP assets in parallel with established formats</p>
+						<p class="fragment">Image artifacts can be quite noticeable</p>
+						<p class="fragment">Decode time is slower than established formats</p>
+					</section>
+					<!-- [4.5] Lossy WebP in Action -->
+					<section>
+						<h3>Lossy WebP</h3>
+						<div class="flex-image-container">
+							<div>
+								<img src="/img/cafe-quality-40.jpg" alt="A george divided against itself" title="A george divided against itself" class="big">
+								<p class="fragment">
+									JPEG (Quality 40)<br>
+									25.93 KB<br>
+								</p>
+							</div>
+							<div>
+								<img src="/img/cafe-quality-65.webp" alt="Cannot stand!" title="Cannot stand!" class="big">
+								<p class="fragment">
+									Lossy WebP (Quality 65)<br>
+									16.59 KB<br>
+								</p>
+							</div>
+						</div>
+						<h4 class="fragment"><u>36%</u> reduction in file size</h4>
+					</section>
+					<!-- [4.6] Lossless WebP in Action -->
+					<section>
+						<h3>Lossy WebP</h3>
+						<div class="flex-image-container">
+							<div>
+								<img src="/img/jiffy-park-png-128.png" alt="Jiffy Park" title="Jiffy Park" class="big">
+								<p class="fragment">
+									8-bit PNG (128 colors)<br>
+									25.93 KB<br>
+								</p>
+							</div>
+							<div>
+								<img src="/img/jiffy-park-lossless.webp" alt="Jiffy Park" title="Jiffy Park" class="big">
+								<p class="fragment">
+									Lossless WebP<br>
+									23.21 KB<br>
+								</p>
+							</div>
+						</div>
+						<h4 class="fragment"><u>11%</u> reduction in file size</h4>
 					</section>
 				</section>
 				<!-- [5.0] The End -->

@@ -113,9 +113,28 @@ $heading6Size: .6em;
 		}
 
         pre,
-        code{
+        code,
+		table{
             font-family: $monospaceFont;
         }
+
+		thead{
+			td{
+				color: $yellow;
+			}
+		}
+
+		table{
+			margin-bottom: .5em;
+
+			td{
+				font-size: .875em;
+
+				&:last-child{
+					text-align: right;
+				}
+			}
+		}
 
 		.smaller{
 			max-width: 55%;
@@ -146,6 +165,10 @@ $heading6Size: .6em;
 
 		.yellow{
 			color: $yellow;
+		}
+
+		.red{
+			color: $red;
 		}
 
 		.centered{
