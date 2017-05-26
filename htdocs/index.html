@@ -280,12 +280,12 @@
 					<section>
 						<h3>[INSERT TITLE CARD IMAGE]</h3>
 					</section>
-					<!-- [3.2] The Easy Way -->
+					<!-- [3.2] JPEG Optimizers -->
 					<section>
 						<h1>JPEG Optimizers</h1>
 						<h4 class="fragment">(There's a lot of them)</h4>
 					</section>
-					<!-- [3.3] A Comparison -->
+					<!-- [3.3] JPEG Optimizer Shootout -->
 					<section>
 						<h3>JPEG Optimizer Shootout*</h3>
 						<table>
@@ -325,8 +325,66 @@
 							</tbody>
 						</table>
 						<div class="fragment">
-							<h6>* Target/export quality is 84 due to Guetzli limitations</h6>
-							<h6>** Can only encode baseline JPEGs</h6>
+							<h6>*Target/export quality is 84 due to Guetzli limitations</h6>
+							<h6>**Can only encode baseline JPEGs</h6>
+						</div>
+					</section>
+					<!-- [3.4] Thoughts on JPEG Optimizers -->
+					<section>
+						<h3>Which JPEG optimizer is best?</h3>
+						<p class="fragment" data-fragment-index="1">When quality is paramount</p>
+						<h4 class="fragment" class="fragment" data-fragment-index="1">Use Guetzli</h4>
+						<p class="fragment" data-fragment-index="2">When configurability is desired</p>
+						<h4 class="fragment" data-fragment-index="2">Use jpeg-recompress</h4>
+						<p class="fragment" data-fragment-index="3">For everything else</p>
+						<h4 class="fragment" data-fragment-index="3">There's mozjpeg</h4>
+					</section>
+					<!-- [3.5] JPEG Optimizers -->
+					<section>
+						<h1>PNG Optimizers</h1>
+						<h4 class="fragment">(There's also a lot of them)</h4>
+					</section>
+					<!-- [3.6] PNG Optimizer Shootout -->
+					<section>
+						<h3>PNG Optimizer Shootout</h3>
+						<table>
+							<thead>
+								<tr>
+									<td>Optimizer</td>
+									<td>Time</td>
+									<td>Size (KB)</td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>(Source image)</td>
+									<td>n/a</td>
+									<td>484.00</td>
+								</tr>
+								<tr>
+									<td>optipng</td>
+									<td>0m 54.034s</td>
+									<td>474.03</td>
+								</tr>
+								<tr>
+									<td>pngcrush</td>
+									<td>0m 13.793s</td>
+									<td>473.59</td>
+								</tr>
+								<tr>
+									<td>pngquant<span>*</span></td>
+									<td>0m&nbsp;&nbsp;0.486s</td>
+									<td>150.72</td>
+								</tr>
+								<tr>
+									<td>pngnq<span>*</span></td>
+									<td>0m 2.336s</td>
+									<td>149.49</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="fragment">
+							*Quantizing optimization (256 colors)
 						</div>
 					</section>
 				</section>
@@ -381,7 +439,7 @@
 					</section>
 					<!-- [4.6] Lossless WebP in Action -->
 					<section>
-						<h3>Lossy WebP</h3>
+						<h3>Lossless WebP</h3>
 						<div class="flex-image-container">
 							<div>
 								<img src="/img/jiffy-park-png-128.png" alt="Jiffy Park" title="Jiffy Park" class="big">
@@ -399,6 +457,14 @@
 							</div>
 						</div>
 						<h4 class="fragment"><u>11%</u> reduction in file size</h4>
+					</section>
+					<!-- [4.7] CSS Techniques -->
+					<section>
+						<h4>Don't export more images...</h4>
+						<h1>Use CSS Effects!</h1>
+					</section>
+					<!-- [4.8] CSS Filters Example -->
+					<section>
 					</section>
 				</section>
 				<!-- [5.0] The End -->
