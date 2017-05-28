@@ -330,16 +330,6 @@
 									<td>1,998.50</td>
 								</tr>
 								<tr>
-									<td>guetzli<span class="yellow">**</span></td>
-									<td><span class="red">6m 32.62s</span></td>
-									<td>776.49</td>
-								</tr>
-								<tr>
-									<td>jpeg-recompress</td>
-									<td>0m 12.74s</td>
-									<td><span class="yellow">742.85</span></td>
-								</tr>
-								<tr>
 									<td>jpegoptim</td>
 									<td>0m&nbsp;&nbsp;0.37s</td>
 									<td>908.50</td>
@@ -348,6 +338,16 @@
 									<td>mozjpeg (3.2)</td>
 									<td>0m&nbsp;&nbsp;0.37s</td>
 									<td>908.44</td>
+								</tr>
+								<tr>
+									<td>guetzli<span class="yellow">**</span></td>
+									<td><span class="red">6m 32.62s</span></td>
+									<td>776.49</td>
+								</tr>
+								<tr>
+									<td>jpeg-recompress</td>
+									<td>0m 12.74s</td>
+									<td><span class="yellow">742.85</span></td>
 								</tr>
 							</tbody>
 						</table>
@@ -359,7 +359,7 @@
 					<!-- [3.4] Thoughts on JPEG Optimizers -->
 					<section>
 						<h3>Which JPEG optimizer is best?</h3>
-						<p class="fragment" data-fragment-index="1">When quality is paramount</p>
+						<p class="fragment" data-fragment-index="1">When quality is paramount and time is no object</p>
 						<h4 class="fragment" class="fragment" data-fragment-index="1">Use Guetzli</h4>
 						<p class="fragment" data-fragment-index="2">When configurability is desired</p>
 						<h4 class="fragment" data-fragment-index="2">Use jpeg-recompress</h4>
@@ -390,13 +390,18 @@
 								</tr>
 								<tr>
 									<td>optipng</td>
-									<td>0m 54.034s</td>
+									<td>0m 54.034s<span>**</span></td>
 									<td>474.03</td>
 								</tr>
 								<tr>
 									<td>pngcrush</td>
-									<td>0m 13.793s</td>
+									<td>0m&nbsp;13.793s</td>
 									<td>473.59</td>
+								</tr>
+								<tr>
+									<td>zopflipng</td>
+									<td><span class="red">2m&nbsp;&nbsp;7.324s</span></td>
+									<td>442.44</td>
 								</tr>
 								<tr>
 									<td>pngquant<span>*</span></td>
@@ -405,14 +410,121 @@
 								</tr>
 								<tr>
 									<td>pngnq<span>*</span></td>
-									<td>0m 2.336s</td>
-									<td>149.49</td>
+									<td>0m&nbsp;&nbsp;2.336s</td>
+									<td><span class="yellow">149.49</span></td>
 								</tr>
 							</tbody>
 						</table>
 						<div class="fragment">
-							*Quantizing optimization (256 colors)
+							<h6>*Quantizing optimization (256 colors)</h6>
+							<h6>**Most aggressive/CPU-intensive settings used</h6>
 						</div>
+					</section>
+					<!-- [3.7] Thoughts on PNG Optimizers -->
+					<section>
+						<h3>Which PNG optimizer is best?</h3>
+						<p class="fragment" data-fragment-index="1">Don't know which optimizer to use?</p>
+						<h4 class="fragment" data-fragment-index="1">Use quantizing optimizers like pngquant and pngnq</h4>
+						<p class="fragment" data-fragment-index="2">Is quantizing optimization unacceptable?</p>
+						<h4 class="fragment" data-fragment-index="2">Use zopflipng</h4>
+						<p class="fragment" data-fragment-index="3">Does zopflipng take too long?</p>
+						<h4 class="fragment" data-fragment-index="3">Use optipng or pngcrush</h4>
+					</section>
+					<!-- [3.8] SVG Optimizers -->
+					<section>
+						<h1>SVG Optimizers</h1>
+						<h4 class="fragment">(Just kidding, SVGO is the only one)</h4>
+					</section>
+					<!-- [3.9] Experimenting with SVGO -->
+					<section>
+						<h3>Experimenting with SVGO</h3>
+						<table>
+							<thead>
+								<tr>
+									<td>Method</td>
+									<td>Size (KB)</td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Unoptimized</td>
+									<td>44.58</td>
+								</tr>
+								<tr>
+									<td>Minified</td>
+									<td>43.13</td>
+								</tr>
+								<tr>
+									<td>SVGO (defaults)</td>
+									<td>38.31</td>
+								</tr>
+								<tr>
+									<td>SVGO (--precision 1)</td>
+									<td>30.21</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+					<!-- [3.10] Bulk Optimization -->
+					<section>
+						<h2>Bulk optimization in bash</h2>
+						<div class="fragment">
+							<h5>Use <code>find</code> to find images:</h5>
+							<pre><code>find ./ -type f -name '*.jpg'</code></pre>
+						</div>
+						<div class="fragment">
+							<h5>Pass found files to <code>find</code>'s <code>-exec</code> parameter:</h5>
+							<pre><code>find ./ -type f -name '*.jpg' -exec jpeg-recompress {} {} \;</code></pre>
+						</div>
+					</section>
+					<!-- [3.11] Bulk Optimization (xargs FTW!) -->
+					<section>
+						<h2>Bulk optimization in bash</h2>
+						<h4><code>xargs</code> FTW!</h4>
+						<pre><code>find ./ -type f -name '*.jpg' | xargs -P 32 -I {} jpeg-recompress {} {}</code></pre>
+						<h5>Processes 32 images at a time</h5>
+					</section>
+					<!-- [3.12] Warning! -->
+					<section>
+						<h1>Warning!</h1>
+						<h3>Files will get clobbered! Back up original images!</h3>
+					</section>
+					<!-- [3.13] Automating Optimization (gulp) -->
+					<section>
+						<h2>Automate optimization with gulp</h2>
+						<pre><code>const gulp = require(&quot;gulp&quot;);
+const imagemin = require(&quot;gulp-imagemin&quot;);
+
+const optimizeImages = ()=&gt;{
+  let src = &quot;src/img/**/*.{jpg,png,gif,svg}&quot;;
+  let dest = &quot;dist/img&quot;;
+
+  return gulp.src(src)
+    .pipe(imagemin())
+    .pipe(gulp.dest(dest));
+};
+
+exports.optimizeImages = optimizeImages;</code></pre>
+					</section>
+					<!-- [3.14] Automating Optimization (webpack) -->
+					<section>
+						<h2>Automate optimization with webpack</h2>
+						<pre><code>const ImageMinPlugin = require(&quot;imagemin-webpack-plugin&quot;).default;
+
+module.exports = {
+  // Skipping past entry point(s)/loaders to plugin config...
+  plugins: [
+    new ImageMinPlugin({
+      test: "../**/*.{jpg,svg,png,gif}",
+      maxConcurrency: 16
+    })
+  ]
+};</code></pre>
+					</section>
+					<!-- [3.15] Always Examine Optimized Output! -->
+					<section>
+						<h3>Remember:</h3>
+						<h2>Always examine optimized image output!</h2>
 					</section>
 				</section>
 				<!-- [4.0] The Yada Yada or: The Miscellany -->

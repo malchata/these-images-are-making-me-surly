@@ -1,16 +1,10 @@
-# Speed vs. Speed to Market
-## A talk about approaching web performance proactively.
+# These Images are Makin' me Surly!
+## A talk about images
 by [Jeremy Wagner](https://jeremywagner.me) ([@malchata](https://twitter.com/malchata))
 
-Yet another one of my talks, except this one is on web performance, and what you can do to be a performance advocate before sites get into prod (as well as some tips for slow sites in prod).
-
-If you want to run this talk locally, just clone this repo, `cd` into its directory, and run `npm install` to install dependencies. Then spin up the local web server by typing `node http.js` and point your browser to http://localhost:8080
+Using images on the web seems easy, right? Slap 'em in tags, put 'em in `background` properties and it's gold! Gold! Right? Wrong! There's much more to mulva over. You have to think about formats, exporting, sizes, optimization, and yada yada yada. In this session, we'll cover some must-know techniques and information about using images on the web, from realizing the truth about image quality to the foundation of basic image handling and some very refreshing exporting techniques, going further with optimizers (including automation!) and some of the miscellaneous bits and pieces you may not have even known about in this surprisingly deep topic. Show up for serenity now, or it could be insanity later!
 
 ## Talk dates:
-~~**22 April, 2017:** [Twin Cities Code Camp 21](https://twincitiescodecamp.com/#/Events/21/talks)~~
-
-**6-7 June, 2017** [Prairie Dev Con](http://prairiedevcon.com/Sessions)
-
-**8 June, 2017** [Open Source North](http://opensourcenorth.com/)
+**7 June, 2017** [Prairie Dev Con](http://prairiedevcon.com/Schedule)
 
 If you like this talk and want to book me for your conference, email me at [public@jeremywagner.me](public@jeremywagner.me) or tweet me [@malchata](https://twitter.com/malchata).
