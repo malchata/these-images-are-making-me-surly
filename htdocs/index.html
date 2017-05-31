@@ -18,7 +18,10 @@
 	<body class="these-images-are-making-me-surly">
 		<div class="reveal">
 			<!-- Table of Contents
-				[0.0] Title Card
+				[0.0] Opener
+					[0.0] Sponsors (Prairie Dev Con)
+					[0.1] Title Card
+					[0.2] A Little Introduction
 				[1.0] The Truth or: Image Quality is Subjective
 					[1.1] Title Card
 					[1.2] The Web is Image Hell
@@ -28,6 +31,7 @@
 					[1.6] Who's Got Reference?
 					[1.7] A JPEG Test Case
 					[1.8] Factors in Subjectivity
+					[1.9] The Gist
 				[2.0] The Foundation or: Starting Off Right
 					[2.1] Title Card
 					[2.2] Use The Right Format!
@@ -47,16 +51,72 @@
 					[2.16] Mind Your Sizes
 					[2.17] Oversized Images are a Huge Problem
 					[2.18] Don't Force Giant Images on All Users
-					[2.19] srcset and/or sizes
+					[2.19] Using srcset
+					[2.20] Using the <picture> element
 				[3.0] The Fix-up or: Keeping it Lean with Optimizers
+					[3.1] Title Card
+					[3.2] JPEG Optimizers
+					[3.3] JPEG Source Image
+					[3.4] JPEG Optimizer Shootout
+					[3.5] Thoughts on JPEG Optimizers
+					[3.6] PNG Optimizers
+					[3.7] PNG Source Image
+					[3.8] PNG Optimizer Shootout
+					[3.9] Thoughts on PNG Optimizers
+					[3.10] SVG Optimizers
+					[3.11] Experimenting with SVGO
+					[3.12] Bulk Optimization
+					[3.13] Bulk Optimization (xargs FTW!)
+					[3.14] Warning!
+					[3.15] Automating Optimization (gulp)
+					[3.16] Automating Optimization (webpack)
+					[3.17] Always Examine Optimized Output!
 				[4.0] The Yada Yada or: The Miscellany
-				[5.0] Wrapping Up
+					[4.1] Title Card
+					[4.2] WebP is for Performance
+					[4.3] WebP Advantages
+					[4.4] WebP Disadvantages
+					[4.5] The State of WebP Support
+					[4.6] Lossy WebP in Action
+					[4.7] Lossless WebP in Action
+					[4.8] WebP with a Fallback
+					[4.9] CSS Techniques
+					[4.10] CSS Filters Example
+					[4.11] CSS Blend Modes Example
+					[4.12] ALL OF THE EFFECTS!
+				[5.0] Resources and Links
+					[5.1] Resources Pt. I
+					[5.2] Resources Pt. II
+				[6.0] Ending Slides
+					[6.1] The End
+					[6.2] Book Plug
 			-->
 			<div class="slides">
-				<!-- [0.0] Title Card -->
+				<!-- [0.0] Opener -->
 				<section>
-					<img src="img/title-card.svg" alt="These Images Are Making Me Surly!" title="These Images Are Making Me Surly!" class="title-card">
-					<h5>twitter: <a href="https://twitter.com/malchata" target="_blank" rel="noopener">@malchata</a>&nbsp;&nbsp;|&nbsp;&nbsp;Blog: <a href="https://jeremywagner.me" target="_blank" rel="noopener">jeremywagner.me</a></h5>
+					<!-- [0.0] Sponsors (Prairie Dev Con) -->
+					<section data-background-color="#fff">
+						<img src="img/sponsors.png" alt="PrDC Sponsors" title="PrDC Sponsors">
+					</section>
+					<!-- [0.1] Title Card -->
+					<section>
+						<img src="img/title-card.svg" alt="These Images Are Making Me Surly!" title="These Images Are Making Me Surly!" class="title-card">
+						<h5>twitter: <a href="https://twitter.com/malchata" target="_blank" rel="noopener">@malchata</a>&nbsp;&nbsp;&mdash;&nbsp;&nbsp;Blog: <a href="https://jeremywagner.me" target="_blank" rel="noopener">jeremywagner.me</a></h5>
+					</section>
+					<!-- [0.2] A Little Introduction -->
+					<section>
+						<h3>Hi, I'm Jeremy</h3>
+						<div class="flex-image-container">
+							<div>
+								<img src="/img/cartoon-dog.jpg" alt="High-fiving a cartoon dog" title="High-fiving a cartoon dog" class="big">
+							</div>
+							<ul class="left">
+								<li class="fragment">I work for General Mills in Minnesota (Canada Junior)</li>
+								<li class="fragment">I <a href="https://www.manning.com/books/web-performance-in-action?a_aid=webopt&a_bid=63c31090" rel="noopener">wrote a book</a> for Manning last year on web performance (giveaway at the end of the talk!)</li>
+								<li class="fragment">Hobbies include writing, running, guitar, and high-fiving cartoon dogs</li>
+							</ul>
+						</div>
+					</section>
 				</section>
 				<!-- [1.0] The Truth or: Image Quality is Subjective -->
 				<section>
@@ -87,17 +147,17 @@
 						<h4>the power of the reference image:</h4>
 						<div class="flex-image-container">
 							<div>
-								<img data-fragment-index="1" src="/img/junior-mints-png8-192-color.png" alt="They're very refreshing!" title="They're very refreshing!" class="fragment big">
-								<p data-fragment-index="3" class="fragment">
-									8-bit PNG (192 colors)<br>
-									27.54 KB<br>
+								<img src="/img/junior-mints-png24.png" alt="They're very refreshing!" title="They're very refreshing!" class="big">
+								<p class="fragment">
+									Full Color PNG<br>
+									90.72 KB<br>
 								</p>
 							</div>
 							<div>
-								<img data-fragment-index="2" src="/img/junior-mints-png24.png" alt="They're very refreshing!" title="They're very refreshing!" class="fragment big">
-								<p data-fragment-index="4" class="fragment">
-									Full Color PNG<br>
-									90.72 KB<br>
+								<img src="/img/junior-mints-png8-192-color.png" alt="They're very refreshing!" title="They're very refreshing!" class="big">
+								<p class="fragment">
+									8-bit PNG (192 colors)<br>
+									27.54 KB<br>
 								</p>
 							</div>
 						</div>
@@ -111,20 +171,20 @@
 					<!-- [1.7] A JPEG Test Case -->
 					<section>
 						<h2>Belaboring the point</h2>
-						<h4>(But this time with JPEGs!)</h4>
+						<h4>(This time with JPEGs!)</h4>
 						<div class="flex-image-container">
 							<div>
-								<img data-fragment-index="1" src="/img/cafe-quality-40.jpg" alt="I'll have a big salad." title="I'll have a big salad." class="fragment big">
-								<p data-fragment-index="3" class="fragment">
-									Quality Level 40<br>
-									25.39 KB<br>
+								<img src="/img/cafe-quality-100.jpg" alt="We don't have a big salad." title="We don't have a big salad." class="big">
+								<p class="fragment">
+									Quality Level 100<br>
+									129.66 KB<br>
 								</p>
 							</div>
 							<div>
-								<img data-fragment-index="2" src="/img/cafe-quality-100.jpg" alt="We don't have a big salad." title="We don't have a big salad." class="fragment big">
-								<p data-fragment-index="4" class="fragment">
-									Quality Level 100<br>
-									129.66 KB<br>
+								<img src="/img/cafe-quality-40.jpg" alt="WE DON'T HAVE BIG BOWLS." title="WE DON'T HAVE BIG BOWLS." class="big">
+								<p class="fragment">
+									Quality Level 40<br>
+									25.39 KB<br>
 								</p>
 							</div>
 						</div>
@@ -133,10 +193,16 @@
 					<section>
 						<h2>Factors for subjectivity</h2>
 						<p class="fragment">Image content</p>
+						<p class="fragment">Scaling</p>
 						<p class="fragment">Viewing distance</p>
 						<p class="fragment">Screen size</p>
-						<p class="fragment">Screen resolution and pixel density</p>
-						<p class="fragment">Physical limitations</p>
+						<p class="fragment">Screen resolution/pixel density (e.g., Retina)</p>
+						<p class="fragment">Physical limitations/handicaps</p>
+					</section>
+					<!-- [1.9] The Gist -->
+					<section>
+						<h1>The gist:</h1>
+						<h3>Less is usually more</h3>
 					</section>
 				</section>
 				<!-- [2.0] The Foundation or: Starting Off Right -->
@@ -152,20 +218,20 @@
 					</section>
 					<!-- [2.3] A Case Study in Improper Format Choices -->
 					<section>
-						<h4>The wrong format can cost you:</h4>
+						<h4>The wrong format can cost you!</h4>
 						<div class="flex-image-container">
-							<div>
-								<img src="/img/cafe-quality-40.jpg" alt="Bawdy George" title="Bawdy George" class="big">
-								<p class="fragment">
-									JPEG (Quality 40)<br>
-									25.39 KB<br>
-								</p>
-							</div>
 							<div>
 								<img src="/img/cafe-png24.png" alt="Liar George" title="Liar George" class="big">
 								<p class="fragment">
 									Full Color PNG<br>
 									206.98 KB<br>
+								</p>
+							</div>
+							<div>
+								<img src="/img/cafe-quality-40.jpg" alt="Bawdy George" title="Bawdy George" class="big">
+								<p class="fragment">
+									JPEG (Quality 40)<br>
+									25.39 KB<br>
 								</p>
 							</div>
 						</div>
@@ -189,11 +255,11 @@
 					<!-- [2.7] Directions -->
 					<section>
 						<h1>Directions:</h1>
-						<p data-fragment-index="1" class="fragment">1. Begin adjusting quality towards 0</p>
-						<p data-fragment-index="2" class="fragment">2. Stop when image appears as if rubbed with greasy deli ham</p>
-						<p data-fragment-index="3" class="fragment">3. Adjust by 10<span class="yellow">*</span> away from 0</p>
-						<p data-fragment-index="4" class="fragment">4. Get on with your life</p>
-						<h6 data-fragment-index="3" class="fragment">*Your experience may vary</h6>
+						<p class="fragment">1. Begin adjusting quality towards 0</p>
+						<p class="fragment">2. Stop when image appears as if rubbed with greasy deli ham</p>
+						<p class="fragment">3. Adjust by 10<span class="yellow">*</span> away from 0</p>
+						<p class="fragment">4. Get on with your life</p>
+						<h6 class="fragment">*Your experience may vary</h6>
 					</section>
 					<!-- [2.8] For Lossless Images -->
 					<section>
@@ -211,17 +277,17 @@
 						<h4>Quantization in Practice</h4>
 						<div class="flex-image-container">
 							<div>
-								<img src="/img/jiffy-park-png-128.png" alt="Jiffy Park" title="Jiffy Park" class="big">
-								<p class="fragment">
-									8-bit PNG (128 colors)<br>
-									25.93 KB<br>
-								</p>
-							</div>
-							<div>
 								<img src="/img/jiffy-park-png24.png" alt="Jiffy Park" title="Jiffy Park" class="big">
 								<p class="fragment">
 									Full Color PNG<br>
 									81.7 KB<br>
+								</p>
+							</div>
+							<div>
+								<img src="/img/jiffy-park-png-128.png" alt="Jiffy Park" title="Jiffy Park" class="big">
+								<p class="fragment">
+									8-bit PNG (128 colors)<br>
+									25.93 KB<br>
 								</p>
 							</div>
 						</div>
@@ -259,7 +325,7 @@
 					</section>
 					<!-- [2.15] SVG Compression Works -->
 					<section>
-						<h2>SVG Compression Works</h2>
+						<h3>SVG Compression Works!</h3>
 						<img src="/img/compression-ratios.svg" alt="SVG Compression Ratios" title="SVG Compression Ratios">
 					</section>
 					<!-- [2.16] Mind Your Sizes -->
@@ -270,16 +336,16 @@
 					</section>
 					<!-- [2.17] Oversized Images are a Huge Problem -->
 					<section>
-						<h3>Got oversized images?</h3>
+						<h3>Got big images?</h3>
 						<img class="big" src="/img/oversized-image.jpg" alt="Big images, big problems" title="Big images, big problems">
 						<h3>You've got big problems!</h3>
 					</section>
 					<!-- [2.18] Don't Force Giant Images on All Users -->
 					<section>
-						<h1>Respect users!</h1>
+						<h1>Respect thy user!</h1>
 						<h3>Don't make everyone download giant images!</h3>
 					</section>
-					<!-- [2.19] srcset and/or sizes -->
+					<!-- [2.19] Using srcset -->
 					<section>
 						<h2>Use <code>srcset</code>:</h2>
 						<pre><code class="html">&lt;img src=&quot;small.jpg&quot;
@@ -287,7 +353,10 @@
              medium.jpg 768w,
              large.jpg 1152w&quot;
      alt=&quot;Descriptive alt text!&quot;&gt;</code></pre>
-			 			<h4>In <code>&lt;picture&gt;</code> flavor:</h4>
+					</section>
+					<!-- [2.20] Using the <picture> element -->
+					<section>
+						<h2>Using the <code>&lt;picture&gt;</code> element:</h2>
 						<pre><code class="html">&lt;picture&gt;
     &lt;source srcset=&quot;small.webp 384w,
                     medium.webp 768w,
@@ -312,7 +381,13 @@
 						<h1>JPEG Optimizers</h1>
 						<h4 class="fragment">(There's a lot of them)</h4>
 					</section>
-					<!-- [3.3] JPEG Optimizer Shootout -->
+					<!-- [3.3] JPEG Source Image -->
+					<section>
+						<h3>Test JPEG</h3>
+						<img src="/img/jpeg-opt-source.jpg" alt="Test Image" title="Test Image">
+						<h4>2048x1536, 1,998.5 KB</h4>
+					</section>
+					<!-- [3.4] JPEG Optimizer Shootout -->
 					<section>
 						<h3>JPEG Optimizer Shootout*</h3>
 						<table>
@@ -328,11 +403,6 @@
 									<td>(Source image)</td>
 									<td>n/a</td>
 									<td>1,998.50</td>
-								</tr>
-								<tr>
-									<td>jpegoptim</td>
-									<td>0m&nbsp;&nbsp;0.37s</td>
-									<td>908.50</td>
 								</tr>
 								<tr>
 									<td>mozjpeg (3.2)</td>
@@ -356,22 +426,34 @@
 							<h6>**Can only encode baseline JPEGs</h6>
 						</div>
 					</section>
-					<!-- [3.4] Thoughts on JPEG Optimizers -->
+					<!-- [3.5] Thoughts on JPEG Optimizers -->
 					<section>
 						<h3>Which JPEG optimizer is best?</h3>
-						<p class="fragment" data-fragment-index="1">When quality is paramount and time is no object</p>
-						<h4 class="fragment" class="fragment" data-fragment-index="1">Use Guetzli</h4>
-						<p class="fragment" data-fragment-index="2">When configurability is desired</p>
-						<h4 class="fragment" data-fragment-index="2">Use jpeg-recompress</h4>
-						<p class="fragment" data-fragment-index="3">For everything else</p>
-						<h4 class="fragment" data-fragment-index="3">There's mozjpeg</h4>
+						<div class="fragment">
+							<p>When quality is paramount and time is no object</p>
+							<h4>Use Guetzli</h4>
+						</div>
+						<div class="fragment">
+							<p>When configurability is desired</p>
+							<h4>Use jpeg-recompress</h4>
+						</div>
+						<div class="fragment">
+							<p>For everything else</p>
+							<h4>There's mozjpeg</h4>
+						</div>
 					</section>
-					<!-- [3.5] JPEG Optimizers -->
+					<!-- [3.6] PNG Optimizers -->
 					<section>
 						<h1>PNG Optimizers</h1>
 						<h4 class="fragment">(There's also a lot of them)</h4>
 					</section>
-					<!-- [3.6] PNG Optimizer Shootout -->
+					<!-- [3.7] PNG Source Image -->
+					<section>
+						<h3>Test PNG</h3>
+						<img src="/img/png-opt-source.png" alt="Test Image" title="Test Image">
+						<h4>1024x892, 484 KB, Full Transparency</h4>
+					</section>
+					<!-- [3.8] PNG Optimizer Shootout -->
 					<section>
 						<h3>PNG Optimizer Shootout</h3>
 						<table>
@@ -420,22 +502,28 @@
 							<h6>**Most aggressive/CPU-intensive settings used</h6>
 						</div>
 					</section>
-					<!-- [3.7] Thoughts on PNG Optimizers -->
+					<!-- [3.9] Thoughts on PNG Optimizers -->
 					<section>
 						<h3>Which PNG optimizer is best?</h3>
-						<p class="fragment" data-fragment-index="1">Don't know which optimizer to use?</p>
-						<h4 class="fragment" data-fragment-index="1">Use quantizing optimizers like pngquant and pngnq</h4>
-						<p class="fragment" data-fragment-index="2">Is quantizing optimization unacceptable?</p>
-						<h4 class="fragment" data-fragment-index="2">Use zopflipng</h4>
-						<p class="fragment" data-fragment-index="3">Does zopflipng take too long?</p>
-						<h4 class="fragment" data-fragment-index="3">Use optipng or pngcrush</h4>
+						<div class="fragment">
+							<p>Don't know which optimizer to use?</p>
+							<h4>Use quantizing optimizers like pngquant and pngnq</h4>
+						</div>
+						<div class="fragment">
+							<p>Is quantizing optimization unacceptable?</p>
+							<h4>Use zopflipng</h4>
+						</div>
+						<div class="fragment">
+							<p>Does zopflipng take too long?</p>
+							<h4>Use optipng or pngcrush</h4>
+						</div>
 					</section>
-					<!-- [3.8] SVG Optimizers -->
+					<!-- [3.10] SVG Optimizers -->
 					<section>
 						<h1>SVG Optimizers</h1>
 						<h4 class="fragment">(Just kidding, SVGO is the only one)</h4>
 					</section>
-					<!-- [3.9] Experimenting with SVGO -->
+					<!-- [3.11] Experimenting with SVGO -->
 					<section>
 						<h3>Experimenting with SVGO</h3>
 						<table>
@@ -465,7 +553,7 @@
 							</tbody>
 						</table>
 					</section>
-					<!-- [3.10] Bulk Optimization -->
+					<!-- [3.12] Bulk Optimization -->
 					<section>
 						<h2>Bulk optimization in bash</h2>
 						<div class="fragment">
@@ -477,19 +565,19 @@
 							<pre><code>find ./ -type f -name '*.jpg' -exec jpeg-recompress {} {} \;</code></pre>
 						</div>
 					</section>
-					<!-- [3.11] Bulk Optimization (xargs FTW!) -->
+					<!-- [3.13] Bulk Optimization (xargs FTW!) -->
 					<section>
 						<h2>Bulk optimization in bash</h2>
 						<h4><code>xargs</code> FTW!</h4>
 						<pre><code>find ./ -type f -name '*.jpg' | xargs -P 32 -I {} jpeg-recompress {} {}</code></pre>
 						<h5>Processes 32 images at a time</h5>
 					</section>
-					<!-- [3.12] Warning! -->
+					<!-- [3.14] Warning! -->
 					<section>
 						<h1>Warning!</h1>
 						<h3>Files will get clobbered! Back up original images!</h3>
 					</section>
-					<!-- [3.13] Automating Optimization (gulp) -->
+					<!-- [3.15] Automating Optimization (gulp) -->
 					<section>
 						<h2>Automate optimization with gulp</h2>
 						<pre><code>const gulp = require(&quot;gulp&quot;);
@@ -506,7 +594,7 @@ const optimizeImages = ()=&gt;{
 
 exports.optimizeImages = optimizeImages;</code></pre>
 					</section>
-					<!-- [3.14] Automating Optimization (webpack) -->
+					<!-- [3.16] Automating Optimization (webpack) -->
 					<section>
 						<h2>Automate optimization with webpack</h2>
 						<pre><code>const ImageMinPlugin = require(&quot;imagemin-webpack-plugin&quot;).default;
@@ -515,13 +603,13 @@ module.exports = {
   // Skipping past entry point(s)/loaders to plugin config...
   plugins: [
     new ImageMinPlugin({
-      test: "../**/*.{jpg,svg,png,gif}",
+      test: &quot;../**/*.{jpg,svg,png,gif}&quot;,
       maxConcurrency: 16
     })
   ]
 };</code></pre>
 					</section>
-					<!-- [3.15] Always Examine Optimized Output! -->
+					<!-- [3.17] Always Examine Optimized Output! -->
 					<section>
 						<h3>Remember:</h3>
 						<h2>Always examine optimized image output!</h2>
@@ -555,7 +643,12 @@ module.exports = {
 						<p class="fragment">Image artifacts can be quite noticeable</p>
 						<p class="fragment">Decode time is slower than established formats</p>
 					</section>
-					<!-- [4.5] Lossy WebP in Action -->
+					<!-- [4.5] The State of WebP Support -->
+					<section>
+						<h3>The state of WebP support</h3>
+						<img src="/img/webp-support.png" title="The state of WebP support" alt="The state of WebP support" class="big">
+					</section>
+					<!-- [4.6] Lossy WebP in Action -->
 					<section>
 						<h3>Lossy WebP</h3>
 						<div class="flex-image-container">
@@ -576,7 +669,7 @@ module.exports = {
 						</div>
 						<h4 class="fragment"><u>36%</u> reduction in file size</h4>
 					</section>
-					<!-- [4.6] Lossless WebP in Action -->
+					<!-- [4.7] Lossless WebP in Action -->
 					<section>
 						<h3>Lossless WebP</h3>
 						<div class="flex-image-container">
@@ -597,20 +690,130 @@ module.exports = {
 						</div>
 						<h4 class="fragment"><u>11%</u> reduction in file size</h4>
 					</section>
-					<!-- [4.7] CSS Techniques -->
+					<!-- [4.8] WebP with a Fallback -->
 					<section>
-						<h4>Don't export more images...</h4>
+						<h2>WebP with a fallback</h2>
+						<pre><code>&lt;picture&gt;
+  &lt;source srcset=&quot;my-awesome-webp-image.webp&quot; type=&quot;image/webp&quot;&gt;
+  &lt;source srcset=&quot;regular-jpeg-image.jpg&quot; type=&quot;image/jpeg&quot;&gt;
+  &lt;!-- &lt;img&gt; is a fallback for when &lt;picture&gt; isn't supported --&gt;
+  &lt;img src=&quot;regular-jpeg-image.jpg&quot;&gt;
+&lt;/picture&gt;</code></pre>
+						<h4>Have your cake and eat it too!</h4>
+					</section>
+					<!-- [4.9] CSS Techniques -->
+					<section>
+						<h4>Don't lean on Photoshop...</h4>
 						<h1>Use CSS Effects!</h1>
 					</section>
-					<!-- [4.8] CSS Filters Example -->
+					<!-- [4.10] CSS Filters Example -->
 					<section>
+						<h4>CSS Filters in Action</h4>
+						<div id="filter-image"></div>
+						<p class="code-label">filter: <span id="filter-mode">none</span>;</p>
+					</section>
+					<!-- [4.11] CSS Blend Modes Example -->
+					<section>
+						<h4>CSS Blend Modes in Action</h4>
+						<div id="blend-image"></div>
+						<p class="code-label">background-blend-mode: <span id="blend-mode">normal</span>;</p>
+					</section>
+					<!-- [4.12] ALL OF THE EFFECTS! -->
+					<section>
+						<h4>All of the effects!</h4>
+						<div id="omni-image"></div>
+						<p class="code-label">
+							filter: <span id="omni-filter-mode">none</span>;<br>
+							background-blend-mode: <span id="omni-blend-mode">normal</span>;
+						</p>
 					</section>
 				</section>
-				<!-- [5.0] The End -->
+				<!-- [5.0] Resources and Links -->
+				<section>
+					<!-- [5.1] Resources Pt. I -->
+					<section>
+						<h2>Resources (Part I)</h2>
+						<ul>
+							<li>
+								This talk: <a href="https://github.com/malchata/these-images-are-making-me-surly" rel="noopener">github.com/malchata/these-images-are-making-me-surly</a>
+							<li>
+								Responsive Issues Community Group: <a href="http://ricg.io" rel="noopener">ricg.io</a>
+							</li>
+							<li>
+								mozjpeg: <a href="https://github.com/mozilla/mozjpeg" rel="noopener">github.com/mozilla/mozjpeg</a>
+							</li>
+							<li>
+								guetzli: <a href="https://github.com/google/guetzli" rel="noopener">github.com/google/guetzli</a>
+							</li>
+							<li>
+								jpeg-recompress: <a href="https://github.com/danielgtaylor/jpeg-archive" rel="noopener">github.com/danielgtaylor/jpeg-archive</a>
+							</li>
+							<li>
+								optipng: <a href="http://optipng.sourceforge.net" rel="noopener">optipng.sourceforge.net</a>
+							</li>
+							<li>
+								pngcrush: <a href="https://pmt.sourceforge.io/pngcrush" rel="noopener">pmt.sourceforge.io/pngcrush</a>
+							</li>
+							<li>
+								zopflipng: <a href="https://github.com/google/zopfli" rel="noopener">github.com/google/zopfli</a>
+							</li>
+							<li>
+								pngquant: <a href="https://pngquant.org" rel="noopener">pngquant.org</a>
+							</li>
+							<li>
+								pngnq: <a href="http://pngnq.sourceforge.net" rel="noopener">pngnq.sourceforge.net</a>
+							</li>
+							<li>
+								svgo: <a href="https://github.com/svg/svgo" rel="noopener">github.com/svg/svgo</a>
+							</li>
+						</ul>
+					</section>
+					<!-- [5.2] Resources Pt. II -->
+					<section>
+						<h2>Resources (Part II)</h2>
+						<ul>
+							<li>
+								Bulk Image Optimization in Bash: <a href="https://jeremywagner.me/blog/bulk-image-optimization-in-bash" rel="noopener">jeremywagner.me/blog/bulk-image-optimization-in-bash</a>
+							</li>
+							<li>
+								Faster Bulk Image Optimization in Bash: <a href="https://jeremywagner.me/blog/faster-bulk-image-optimization-in-bash" rel="noopener">jeremywagner.me/blog/faster-bulk-image-optimization-in-bash</a>
+							</li>
+							<li>
+								gulp-imagemin: <a href="https://github.com/sindresorhus/gulp-imagemin" rel="noopener">github.com/sindresorhus/gulp-imagemin</a>
+							</li>
+							<li>
+								imagemin-webpack-plugin: <a href="https://github.com/Klathmon/imagemin-webpack-plugin" rel="noopener">github.com/Klathmon/imagemin-webpack-plugin</a>
+							</li>
+							<li>
+								WebP: <a href="https://developers.google.com/speed/webp" rel="noopener">developers.google.com/speed/webp</a>
+							</li>
+							<li>
+								CSS Filters (MDN): <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter" rel="noopener">developer.mozilla.org/en-US/docs/Web/CSS/filter</a>
+							</li>
+							<li>
+								CSS Blend Modes (MDN): <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-blend-mode" rel="noopener">developer.mozilla.org/en-US/docs/Web/CSS/background-blend-mode</a>
+							</li>
+						</ul>
+					</section>
+				</section>
+				<!-- [6.0] Ending Slides -->
+				<section>
+					<!-- [6.1] The End -->
+					<section>
+						<h1>The Finale</h1>
+						<h2>Thank you!</h2>
+					</section>
+					<!-- [6.2] Book Plug -->
+					<section>
+						<h3>Web Performance in Action</h3>
+						<img class="smallest" src="/img/web-perf-in-action.jpg" alt="Web Performance in Action" title="Web Performance in Action">
+						<h4>Save 42% with code <code>sswagner</code></h4>
+					</section>
+				</section>
 			</div>
 		</div>
 		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+		<script src="js/reveal.min.js"></script>
 		<script>
 			Reveal.initialize({
 				history: true,
@@ -633,5 +836,6 @@ module.exports = {
 				]
 			});
 		</script>
+		<script>!function(e,t){function n(e,t){return e=Math.ceil(e),t=Math.floor(t),Math.floor(Math.random()*(t-e))+e}function r(e,t,n){return n.indexOf(e)===t}function a(){for(var e=n(1,4),t=[],a=0;e>a;a++)t.push(l[n(0,l.length-1)]);t=t.filter(r);for(var i="",a=0;a<t.length;a++){i+=t[a]+"(";var o;switch(t[a]){case"blur":o=n(1,10)+"px";break;case"brightness":o=(""+Math.random()).substr(0,4);break;case"hue-rotate":o=n(1,180)+"deg";break;case"contrast":o=n(50,200)+"%";break;case"grayscale":case"invert":case"saturate":case"sepia":o=n(1,100)+"%"}i+=o+")",a<t.length-1&&(i+=" ")}return i}function i(){return d[n(0,d.length-1)]}var l=["blur","brightness","contrast","grayscale","hue-rotate","invert","saturate","sepia"],o=t.getElementById("filter-image"),c=t.getElementById("filter-mode"),d=["multiply","screen","overlay","darken","lighten","color-dodge","color-burn","hard-light","soft-light","difference","exclusion","hue","saturation","color","luminosity"],s=t.getElementById("blend-image"),u=t.getElementById("blend-mode"),g=t.getElementById("omni-image"),f=t.getElementById("omni-filter-mode"),m=t.getElementById("omni-blend-mode");o.addEventListener("click",function(){var e=a();o.style.filter=e,c.innerHTML=e}),s.addEventListener("click",function(){var e=i();s.style.backgroundBlendMode=e,u.innerHTML=e}),g.addEventListener("click",function(){var e=i(),t=a();g.style.filter=t,g.style.backgroundBlendMode=e,f.innerHTML=t,m.innerHTML=e})}(window,document);</script>
 	</body>
 </html>
