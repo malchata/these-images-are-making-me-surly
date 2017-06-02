@@ -52,7 +52,7 @@ $heading6Size: .6em;
 }
 
 .reveal{
-	section{
+    section{
 		a{
 			color: $red;
 			text-decoration: none;
@@ -61,6 +61,32 @@ $heading6Size: .6em;
 				color: $red;
 			}
 		}
+
+        .pretzel{
+			position: relative;
+
+            &:before,
+            &:after{
+                background: url("/img/pretzel.svg") no-repeat;
+                background-size: 100%;
+                display: block;
+                content: "";
+                width: 64px;
+                height: 56px;
+                position: absolute;
+            }
+
+            &:before{
+                top: -8px;
+                left: -16px;
+            }
+
+            &:after{
+                right: -24px;
+                bottom: 0;
+				transform: scaleX(-1);
+            }
+        }
 
 		h1,
 		h2,
