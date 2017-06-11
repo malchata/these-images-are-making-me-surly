@@ -5,23 +5,16 @@
 			These Images Are Makin' Me Surly!
 		</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta charset="utf-8">
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/yadayada.css">
-		<script>
-			var link = document.createElement("link");
-			link.rel = "stylesheet";
-			link.type = "text/css";
-			link.href = window.location.search.match( /print-pdf/gi ) ? "css/print/pdf.css" : "css/print/paper.css";
-			document.getElementsByTagName("head")[0].appendChild(link);
-		</script>
 	</head>
 	<body class="these-images-are-making-me-surly">
 		<div class="reveal">
 			<!-- Table of Contents
 				[0.0] Opener
 					[0.1] Title Card
-					[0.2] Sponsors (Prairie Dev Con)
-					[0.3] A Little Introduction
+					[0.2] A Little Introduction
 				[1.0] The Truth or: Image Quality is Subjective
 					[1.1] Title Card
 					[1.2] The Web is Image Hell
@@ -98,18 +91,14 @@
 					<section>
 						<img src="img/title-card.svg" alt="These Images Are Making Me Surly!" title="These Images Are Making Me Surly!" class="title-card">
 						<h5>twitter: <a href="https://twitter.com/malchata" rel="noopener">@malchata</a>&nbsp;&nbsp;&mdash;&nbsp;&nbsp;Blog: <a href="https://jeremywagner.me" rel="noopener">jeremywagner.me</a></h5>
-						<h6>Slides: <a href="http://bit.ly/these-images" rel="noopener">bit.ly/these-images</a></h6>
+						<h6>Slides: <a href="http://bit.ly/these-images-are-making-me-surly" rel="noopener">bit.ly/these-images-are-making-me-surly</a></h6>
 					</section>
-					<!-- [0.2] Sponsors (Prairie Dev Con) -->
-					<section data-background-color="#fff">
-						<img src="img/sponsors.png" alt="PrDC Sponsors" title="PrDC Sponsors">
-					</section>
-					<!-- [0.3] A Little Introduction -->
+					<!-- [0.2] A Little Introduction -->
 					<section>
 						<h3>Hi, I'm Jeremy</h3>
 						<div class="flex-image-container">
 							<div class="pretzel">
-								<img src="/img/cartoon-dog.jpg" alt="High-fiving a cartoon dog" title="High-fiving a cartoon dog" class="big">
+								<img data-src="img/cartoon-dog.jpg" alt="High-fiving a cartoon dog" title="High-fiving a cartoon dog" class="big">
 							</div>
 							<ul class="left">
 								<li class="fragment">I work for General Mills in Minnesota (Canada Junior)</li>
@@ -123,7 +112,7 @@
 				<section>
 					<!-- [1.1] Title Card -->
 					<section>
-						<img src="/img/jerry.svg" class="title-card" alt="The Truth or: Image Quality is Subjective" title="The Truth or: Image Quality is Subjective">
+						<img data-src="img/jerry.svg" class="title-card" alt="The Truth or: Image Quality is Subjective" title="The Truth or: Image Quality is Subjective">
 					</section>
 					<!-- [1.2] The Web is Image Hell -->
 					<section>
@@ -133,7 +122,7 @@
 					<!-- [1.3] Image Sizes over Time -->
 					<section>
 						<h5>Average image payload vs. average internet speed</h5>
-						<img src="/img/image-sizes.png" alt="Image sizes over time" title="Image sizes over time">
+						<img data-src="img/image-sizes.png" alt="Image sizes over time" title="Image sizes over time">
 						<h6>Source: <a href="http://httparchive.org" rel="noopener">HTTP Archive</a>, <a href="https://www.akamai.com/us/en/about/our-thinking/state-of-the-internet-report/global-state-of-the-internet-connectivity-reports.jsp" rel="noopener">Akamai State of the Internet Report</a></h6>
 					</section>
 					<!-- [1.4] We're Obsessed With Image Quality -->
@@ -147,14 +136,14 @@
 						<h3>Can you tell the difference?</h3>
 						<div class="flex-image-container">
 							<div>
-								<img src="/img/junior-mints-png24.png" alt="They're very refreshing!" title="They're very refreshing!" class="big">
+								<img data-src="img/junior-mints-png24.png" alt="They're very refreshing!" title="They're very refreshing!" class="big">
 								<p class="fragment">
 									Full Color PNG<br>
 									90.7 KB<br>
 								</p>
 							</div>
 							<div>
-								<img src="/img/junior-mints-png8-192-color.png" alt="They're very refreshing!" title="They're very refreshing!" class="big">
+								<img data-src="img/junior-mints-png8-192-color.png" alt="They're very refreshing!" title="They're very refreshing!" class="big">
 								<p class="fragment">
 									8-bit PNG (192 colors)<br>
 									27.5 KB<br>
@@ -174,14 +163,14 @@
 						<h4>(This time with JPEGs!)</h4>
 						<div class="flex-image-container">
 							<div>
-								<img src="/img/cafe-quality-100.jpg" alt="We don't have a big salad." title="We don't have a big salad." class="big">
+								<img data-src="img/cafe-quality-100.jpg" alt="We don't have a big salad." title="We don't have a big salad." class="big">
 								<p class="fragment">
 									Quality Level 100<br>
 									129.7 KB<br>
 								</p>
 							</div>
 							<div>
-								<img src="/img/cafe-quality-40.jpg" alt="WE DON'T HAVE BIG BOWLS." title="WE DON'T HAVE BIG BOWLS." class="big">
+								<img data-src="img/cafe-quality-40.jpg" alt="WE DON'T HAVE BIG BOWLS." title="WE DON'T HAVE BIG BOWLS." class="big">
 								<p class="fragment">
 									Quality Level 40<br>
 									25.4 KB<br>
@@ -209,7 +198,7 @@
 				<section>
 					<!-- [2.1] Title Card -->
 					<section>
-						<img src="/img/kramer.svg" class="title-card" alt="The Foundation or: Starting Off Right" title="The Foundation or: Starting Off Right">
+						<img data-src="img/kramer.svg" class="title-card" alt="The Foundation or: Starting Off Right" title="The Foundation or: Starting Off Right">
 					</section>
 					<!-- [2.2] Use The Right Format! -->
 					<section>
@@ -220,14 +209,14 @@
 						<h4>The wrong format can cost you!</h4>
 						<div class="flex-image-container">
 							<div>
-								<img src="/img/cafe-png24.png" alt="Liar George" title="Liar George" class="big">
+								<img data-src="img/cafe-png24.png" alt="Liar George" title="Liar George" class="big">
 								<p class="fragment">
 									Full Color PNG<br>
 									207 KB<br>
 								</p>
 							</div>
 							<div>
-								<img src="/img/cafe-quality-40.jpg" alt="Bawdy George" title="Bawdy George" class="big">
+								<img data-src="img/cafe-quality-40.jpg" alt="Bawdy George" title="Bawdy George" class="big">
 								<p class="fragment">
 									JPEG (Quality 40)<br>
 									25.4 KB<br>
@@ -238,7 +227,7 @@
 					<!-- [2.4] A Simple Flow Chart -->
 					<section>
 						<h4>One way to choose an image format:</h4>
-						<img src="/img/flowchart.svg" alt="Image Format Choice Flowchart" title="Image Format Choice Flowchart">
+						<img data-src="img/flowchart.svg" alt="Image Format Choice Flowchart" title="Image Format Choice Flowchart">
 					</section>
 					<!-- [2.5] For Lossy Images -->
 					<section>
@@ -266,21 +255,21 @@
 					<!-- [2.9] Quantization in Theory -->
 					<section>
 						<h2>Quantization in Theory</h2>
-						<img src="/img/quantize-theory.png" alt="Quantization in Theory" title="Quantization in Theory">
+						<img data-src="img/quantize-theory.png" alt="Quantization in Theory" title="Quantization in Theory">
 					</section>
 					<!-- [2.10] Quantization in Practice -->
 					<section>
 						<h4>Quantization in Practice</h4>
 						<div class="flex-image-container">
 							<div>
-								<img src="/img/jiffy-park-png24.png" alt="Jiffy Park" title="Jiffy Park" class="big">
+								<img data-src="img/jiffy-park-png24.png" alt="Jiffy Park" title="Jiffy Park" class="big">
 								<p class="fragment">
 									Full Color PNG<br>
 									81.7 KB<br>
 								</p>
 							</div>
 							<div>
-								<img src="/img/jiffy-park-png-128.png" alt="Jiffy Park" title="Jiffy Park" class="big">
+								<img data-src="img/jiffy-park-png-128.png" alt="Jiffy Park" title="Jiffy Park" class="big">
 								<p class="fragment">
 									8-bit PNG (128 colors)<br>
 									25.9 KB<br>
@@ -295,7 +284,7 @@
 					<!-- [2.12] Simplifying in Illustrator -->
 					<section>
 						<video autoplay loop muted preload>
-							<source src="/video/simplify.webm" type="video/webm">
+							<source data-src="video/simplify.webm" type="video/webm">
 						</video>
 					</section>
 					<!-- [2.13] Simplification Output -->
@@ -319,7 +308,7 @@
 					<!-- [2.15] SVG Compression Works -->
 					<section>
 						<h3>SVG Compression Works!</h3>
-						<img src="/img/compression-ratios.svg" alt="SVG Compression Ratios" title="SVG Compression Ratios">
+						<img data-src="img/compression-ratios.svg" alt="SVG Compression Ratios" title="SVG Compression Ratios">
 					</section>
 					<!-- [2.16] Mind Your Sizes -->
 					<section>
@@ -329,7 +318,7 @@
 					<!-- [2.17] Oversized Images are a Huge Problem -->
 					<section>
 						<h3>Got big images?</h3>
-						<img class="big" src="/img/oversized-image.jpg" alt="Big images, big problems" title="Big images, big problems">
+						<img class="big" data-src="img/oversized-image.jpg" alt="Big images, big problems" title="Big images, big problems">
 						<h3>You've got big problems!</h3>
 					</section>
 					<!-- [2.18] Don't Force Giant Images on All Users -->
@@ -366,7 +355,7 @@
 				<section>
 					<!-- [3.1] Title Card -->
 					<section>
-						<img src="/img/elaine.svg" class="title-card" alt="The Fix-Up or: Learn to Love Image Optimizers" title="The Fix-Up or: Learn to Love Image Optimizers">
+						<img data-src="img/elaine.svg" class="title-card" alt="The Fix-Up or: Learn to Love Image Optimizers" title="The Fix-Up or: Learn to Love Image Optimizers">
 					</section>
 					<!-- [3.2] JPEG Optimizers -->
 					<section>
@@ -376,7 +365,7 @@
 					<!-- [3.3] JPEG Source Image -->
 					<section>
 						<h3>Test JPEG</h3>
-						<img src="/img/jpeg-opt-source.jpg" alt="Test Image" title="Test Image">
+						<img data-src="img/jpeg-opt-source.jpg" alt="Test Image" title="Test Image">
 						<h4>2048x1536, 1,998.5 KB</h4>
 					</section>
 					<!-- [3.4] JPEG Optimizer Shootout -->
@@ -442,7 +431,7 @@
 					<!-- [3.7] PNG Source Image -->
 					<section>
 						<h3>Test PNG</h3>
-						<img src="/img/png-opt-source.png" alt="Test Image" title="Test Image">
+						<img data-src="img/png-opt-source.png" alt="Test Image" title="Test Image">
 						<h4>1024x892, 484 KB, Full Transparency</h4>
 					</section>
 					<!-- [3.8] PNG Optimizer Shootout -->
@@ -611,7 +600,7 @@ module.exports = {
 				<section>
 					<!-- [4.1] Title Card -->
 					<section>
-						<img src="/img/newman.svg" class="title-card" alt="The Yada Yada or: The Miscellany" title="The Yada Yada or: The Miscellany">
+						<img data-src="img/newman.svg" class="title-card" alt="The Yada Yada or: The Miscellany" title="The Yada Yada or: The Miscellany">
 					</section>
 					<!-- [4.2] WebP is for Performance -->
 					<section>
@@ -638,21 +627,21 @@ module.exports = {
 					<!-- [4.5] The State of WebP Support -->
 					<section>
 						<h3>The state of WebP support</h3>
-						<img src="/img/webp-support.png" title="The state of WebP support" alt="The state of WebP support" class="big">
+						<img data-src="img/webp-support.png" title="The state of WebP support" alt="The state of WebP support" class="big">
 					</section>
 					<!-- [4.6] Lossy WebP in Action -->
 					<section>
 						<h3>Lossy WebP</h3>
 						<div class="flex-image-container">
 							<div>
-								<img src="/img/cafe-quality-40.jpg" alt="A george divided against itself" title="A george divided against itself" class="big">
+								<img data-src="img/cafe-quality-40.jpg" alt="A george divided against itself" title="A george divided against itself" class="big">
 								<p class="fragment">
 									JPEG (Quality 40)<br>
 									25.4 KB<br>
 								</p>
 							</div>
 							<div>
-								<img src="/img/cafe-quality-65.webp" alt="Cannot stand!" title="Cannot stand!" class="big">
+								<img data-src="img/cafe-quality-65.webp" alt="Cannot stand!" title="Cannot stand!" class="big">
 								<p class="fragment">
 									Lossy WebP (Quality 65)<br>
 									16.59 KB<br>
@@ -666,14 +655,14 @@ module.exports = {
 						<h3>Lossless WebP</h3>
 						<div class="flex-image-container">
 							<div>
-								<img src="/img/jiffy-park-png-128.png" alt="Jiffy Park" title="Jiffy Park" class="big">
+								<img data-src="img/jiffy-park-png-128.png" alt="Jiffy Park" title="Jiffy Park" class="big">
 								<p class="fragment">
 									8-bit PNG (128 colors)<br>
 									25.9 KB<br>
 								</p>
 							</div>
 							<div>
-								<img src="/img/jiffy-park-lossless.webp" alt="Jiffy Park" title="Jiffy Park" class="big">
+								<img data-src="img/jiffy-park-lossless.webp" alt="Jiffy Park" title="Jiffy Park" class="big">
 								<p class="fragment">
 									Lossless WebP<br>
 									23.21 KB<br>
@@ -727,7 +716,7 @@ module.exports = {
 						<h2>Resources (Part I)</h2>
 						<ul>
 							<li>
-								This talk: <a href="http:/bit.ly/these-images" rel="noopener">bit.ly/these-images</a>
+								This talk: <a href="http:/bit.ly/these-images-are-making-me-surly" rel="noopener">bit.ly/these-images-are-making-me-surly</a>
 							<li>
 								Responsive Issues Community Group: <a href="http://ricg.io" rel="noopener">ricg.io</a>
 							</li>
@@ -799,7 +788,7 @@ module.exports = {
 					<!-- [6.2] Book Plug -->
 					<section>
 						<h3>Web Performance in Action</h3>
-						<a href="https://www.manning.com/books/web-performance-in-action?a_aid=webopt&a_bid=63c31090" rel="noopener"><img class="smallest" src="/img/web-perf-in-action.jpg" alt="Web Performance in Action" title="Web Performance in Action"></a>
+						<a href="https://www.manning.com/books/web-performance-in-action?a_aid=webopt&a_bid=63c31090" rel="noopener"><img class="smallest" data-src="img/web-perf-in-action.jpg" alt="Web Performance in Action" title="Web Performance in Action"></a>
 						<h4>Save 42% with code <code>sswagner</code></h4>
 					</section>
 				</section>
@@ -814,6 +803,7 @@ module.exports = {
 				transition: "fade",
 				progress: false,
 				help: false,
+				viewDistance: 2,
 				dependencies: [
 					{
 						src: "plugin/notes/notes.js",

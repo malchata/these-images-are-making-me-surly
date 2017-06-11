@@ -6,7 +6,9 @@ Using images on the web seems easy, right? Slap 'em in tags, put 'em in `backgro
 
 ## Running this talk locally
 
-Running this talk on your machine is a snap. You just need a copy of Node installed. After you clone this repo, run `npm i` to install packages, then run `npm start presentation` to run the presentation server. Once this command is run, you'll have a local copy of the talk running at http://localhost:8080.
+tl;dr: Don't run this talk locally. You can view the slides at http://jlwagner.net/talks/these-images.
+
+If you must run this talk locally for some reason, it's not difficult. You just need a copy of Node installed. After you clone this repo, run `npm i` to install packages, then run `npm start presentation` to run the presentation server. Once this command is run, you'll have a local copy of the talk running at http://localhost:8080.
 
 ## Talk dates:
 ~~**7 June, 2017** [Prairie Dev Con](http://prairiedevcon.com/Schedule)~~

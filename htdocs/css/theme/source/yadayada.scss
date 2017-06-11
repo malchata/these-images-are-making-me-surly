@@ -47,7 +47,7 @@ $heading6Size: .6em;
 
 // Theme-specific styles here
 .these-images-are-making-me-surly{
-	background: $backgroundColor url("/img/bg.svg") no-repeat left top;
+	background: $backgroundColor url("../../img/bg.svg") no-repeat left top;
 }
 
 .reveal{
@@ -66,7 +66,7 @@ $heading6Size: .6em;
 
             &:before,
             &:after{
-                background: url("/img/pretzel.svg") no-repeat;
+                background: url("../../img/pretzel.svg") no-repeat;
                 background-size: 100%;
                 display: block;
                 content: "";
@@ -239,15 +239,15 @@ $heading6Size: .6em;
 		}
 
 		#filter-image{
-			background-image: url("/img/css-blend-top.jpg");
+			background-image: url("../../img/css-blend-top.jpg");
 		}
 
 		#blend-image{
-			background-image: url("/img/css-blend-top.jpg"), url("/img/css-blend-bottom.jpg");
+			background-image: url("../../img/css-blend-top.jpg"), url("../../img/css-blend-bottom.jpg");
 		}
 
 		#omni-image{
-			background-image: url("/img/css-blend-surprise.jpg"), url("/img/css-blend-bottom.jpg");
+			background-image: url("../../img/css-blend-surprise.jpg"), url("../../img/css-blend-bottom.jpg");
 		}
 
 		p.code-label{
